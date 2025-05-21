@@ -1,16 +1,15 @@
-use std::string::String;
-use std::error;
+use std::{error, string::String};
 
-fn devide_int_or_error(x : i32, y : i32) -> Result<i32, String> {
+fn divide_int_or_error(x: i32, y: i32) -> Result<i32, String> {
     if y == 0 {
-        return Err(String::from("{} : Can't Devide by zero.", ));
+        return Err(String::from("{} : Can't Divide by zero."));
     }
-    return Ok(x/y);
+    return Ok(x / y);
 }
 
 fn main() {
     println!("Hello, world!");
-    match devide_int_or_error(5, 0) {
+    match divide_int_or_error(5, 0) {
         Ok(result) => println!("{}", result),
         Err(e) => println!("{}", e),
     }
